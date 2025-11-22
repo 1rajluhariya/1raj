@@ -16,10 +16,9 @@
 }
 body{overflow-x:hidden;}
 
-/* ====== ANIMATION BASE CLASS ====== */
+/* ====== ANIMATION ====== */
 .reveal{opacity:0;transform:translateY(60px);transition:1s ease;}
 .reveal.active{opacity:1;transform:translateY(0);}
-
 .zoom-reveal{opacity:0;transform:scale(0.8);transition:1s ease;}
 .zoom-reveal.active{opacity:1;transform:scale(1);}
 
@@ -36,16 +35,10 @@ nav{
  gap:40px;
  font-weight:500;
  z-index:10;
- animation:fadeIn 1.2s ease;
 }
 nav a{text-decoration:none;color:black;font-size:16px;}
 
-@keyframes fadeIn{
- from{opacity:0; transform:translateY(-20px);}
- to{opacity:1; transform:translateY(0);}
-}
-
-/* Home Section */
+/* HOME */
 .home{
  display:flex;
  width:100%;
@@ -59,28 +52,17 @@ nav a{text-decoration:none;color:black;font-size:16px;}
 }
 .home-left h1{font-size:80px;line-height:85px;}
 .home-left h3{font-size:28px;margin-bottom:20px;}
-
-.button-yellow{
- background:#fcd842;
+.button-yellow,.button-black{
  padding:12px 25px;
- border:none;
  font-weight:600;
  margin-top:25px;
- display:inline-block;
  cursor:pointer;
-}
-.button-yellow a {color:black; text-decoration:none;}
-
-.button-black{
- background:black;
- color:white;
- padding:12px 30px;
- font-weight:600;
  display:inline-block;
- margin-top:25px;
- cursor:pointer;
 }
-.button-black a {color:white; text-decoration:none;}
+.button-yellow{background:#fcd842;}
+.button-black{background:black;color:white;}
+.button-yellow a{color:black;text-decoration:none;}
+.button-black a{color:white;text-decoration:none;}
 
 .home-right{
  width:50%;
@@ -89,80 +71,58 @@ nav a{text-decoration:none;color:black;font-size:16px;}
  justify-content:center;
  align-items:center;
 }
+.home-right img{width:80%;max-width:550px;}
 
-/* ABOUT SECTION */
+/* ABOUT */
 .about{
  width:100%;
  background:#1e1e1e;
  color:white;
  padding:160px 60px;
  display:flex;
- justify-content:center;
- align-items:center;
  gap:80px;
+ align-items:center;
 }
 .about h2{font-size:60px;color:#fcd842;margin-bottom:30px;}
 .about p{font-size:18px;line-height:30px;max-width:620px;}
 
-/* TOOLS */
+/* SERVICES */
 .tools{
  padding:150px 60px;
  background:#fcd842;
  min-height:100vh;
+ text-align:center;
 }
-.tools h2{
- font-size:60px;
- font-weight:900;
- margin-bottom:30px;
+.tools h2{font-size:55px;font-weight:900;margin-bottom:20px;}
+
+.services-grid{
+ margin-top:60px;
+ display:flex;
+ flex-wrap:wrap;
+ gap:30px;
+ justify-content:center;
 }
+.service-card{
+ width:300px;
+ padding:25px;
+ background:white;
+ color:black;
+ border-radius:12px;
+ text-align:center;
+ box-shadow:0 4px 20px rgba(0,0,0,0.1);
+ transition:0.3s;
+}
+.service-card:hover{transform:translateY(-10px);}
+.service-card h3{font-size:22px;font-weight:700;margin-bottom:10px;}
+.service-card p{font-size:15px;opacity:0.8;}
+
 .tools-grid{
  margin-top:60px;
  display:flex;
- gap:80px;
- justify-content:center;
- align-items:center;
+ gap:70px;
  flex-wrap:wrap;
-}
-.tools-grid div{
- text-align:center;
+ justify-content:center;
  font-size:20px;
- font-weight:500;
-}
-
-/* SERVICES */
-.services-grid{
-  margin-top:60px;
-  display:flex;
-  flex-wrap:wrap;
-  gap:30px;
-  justify-content:center;
-}
-
-.service-card{
-  width:300px;
-  padding:25px;
-  background:white;
-  color:black;
-  border-radius:12px;
-  text-align:center;
-  box-shadow:0 4px 20px rgba(0,0,0,0.1);
-  transition:0.3s;
-}
-
-.service-card:hover{
-  transform:translateY(-10px);
-  box-shadow:0 6px 25px rgba(0,0,0,0.2);
-}
-
-.service-card h3{
-  font-size:22px;
-  font-weight:700;
-  margin-bottom:10px;
-}
-
-.service-card p{
-  font-size:15px;
-  opacity:0.8;
 }
 
 /* COMMUNITY */
@@ -173,78 +133,45 @@ nav a{text-decoration:none;color:black;font-size:16px;}
  display:flex;
  justify-content:space-between;
  align-items:center;
+ gap:50px;
 }
 .community h2{font-size:60px;font-weight:900;margin-bottom:20px;}
 .community span{color:#fcd842;}
 .community p{max-width:550px;font-size:18px;line-height:30px;margin-bottom:30px;}
 
-/* SHOP SECTION */
+/* SHOP */
 .shop{
-  background:#fcd842;
-  color:black;
-  padding:150px 60px;
-  min-height:100vh;
+ background:#fcd842;
+ padding:150px 60px;
+ text-align:center;
 }
-
+.shop h1{font-size:45px;font-weight:900;margin-bottom:50px;}
 .shop-grid{
-  display:flex;
-  justify-content:center;
-  align-items:flex-start;
-  flex-wrap:wrap;
-  gap:40px;
+ display:flex;
+ flex-wrap:wrap;
+ gap:40px;
+ justify-content:center;
 }
-
 .shop-card{
-  background:#2c2c2c;
-  width:355px;
-  padding:20px;
-  border-radius:12px;
-  text-align:center;
-  color:white;
+ background:#2c2c2c;
+ width:355px;
+ padding:20px;
+ border-radius:12px;
+ text-align:center;
+ color:white;
 }
-
-.shop-card img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  border-radius:8px;
-}
-
-.shop-card h3{
-  margin-top:15px;
-  font-size:20px;
-  font-weight:600;
-}
-
-.shop-card p{
-  margin-top:5px;
-  font-size:16px;
-  opacity:0.8;
-}
-
-.shop-btn{
-  margin-top:15px;
-  background:#fcd842;
-  color:black;
-  padding:10px 20px;
-  font-weight:600;
-  border-radius:6px;
-  display:inline-block;
-}
-.shop-btn a{color:black;text-decoration:none;}
+.shop-card img{width:100%;border-radius:8px;}
+.shop-btn{margin-top:15px;background:#fcd842;padding:10px 20px;font-weight:600;border-radius:6px;}
+.shop-btn a{text-decoration:none;color:black;}
 
 /* GALLERY */
 .brands{
- padding:160px 60px;
+ padding:150px 60px;
  background:#1c1c1c;
  min-height:100vh;
+ text-align:center;
 }
-.brands h1{
- font-size:60px;
- font-weight:900;
- margin-bottom:40px;
- color:#f4ede7;
-}
+.brands h1{font-size:60px;font-weight:900;color:#f4ede7;margin-bottom:40px;}
 .brands-grid{
  margin-top:30px;
  display:flex;
@@ -253,34 +180,78 @@ nav a{text-decoration:none;color:black;font-size:16px;}
  gap:10px;
 }
 
-/* CONTACT SECTION */
+/* CONTACT */
 .contact{
-  background:#111;
-  color:white;
-  padding:150px 60px;
-  text-align:center;
+ background:#111;
+ color:white;
+ padding:150px 60px;
+ text-align:center;
 }
-.contact h2{
-  font-size:60px;
-  color:#fcd842;
-}
-.contact p{
-  font-size:18px;
-  opacity:0.8;
-  margin-top:10px;
-}
+.contact h2{font-size:60px;color:#fcd842;}
+.contact p{font-size:18px;opacity:0.8;margin-top:10px;}
 .contact-btn{
-  margin-top:30px;
-  display:inline-block;
-  padding:14px 32px;
-  background:#fcd842;
-  color:black;
-  font-weight:700;
-  border-radius:8px;
-  text-decoration:none;
-  font-size:18px;
+ margin-top:30px;
+ padding:14px 32px;
+ background:#fcd842;
+ color:black;
+ font-weight:700;
+ border-radius:8px;
+ text-decoration:none;
+ font-size:18px;
 }
 
+/* ========== RESPONSIVE ========== */
+
+/* Tablets */
+@media (max-width:1024px){
+ nav{padding:18px 35px;gap:25px;}
+ .home-left{padding:100px 40px;}
+ .home-left h1{font-size:60px;line-height:65px;}
+ .about{flex-direction:column;text-align:center;}
+ .community{flex-direction:column;text-align:center;}
+}
+
+/* Mobiles */
+@media (max-width:768px){
+ nav{
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:20px;
+  padding:15px 10px;
+ }
+ .home{
+  flex-direction:column;
+  height:auto;
+ }
+ .home-left,.home-right{width:100%;padding:60px 25px;text-align:center;}
+ .home-left h1{font-size:45px;line-height:50px;}
+ .home-left h3{font-size:22px;}
+ .about{flex-direction:column;padding:100px 25px;text-align:center;}
+ .about h2{font-size:45px;}
+ .tools{padding:100px 25px;}
+ .tools h2{font-size:40px;}
+ .community{padding:100px 25px;text-align:center;}
+ .community h2{font-size:45px;}
+ .community img{width:80%;}
+ .shop{padding:100px 25px;}
+ .shop h1{font-size:40px;}
+ .brands{padding:100px 25px;}
+ .brands h1{font-size:40px;}
+ .contact{padding:100px 25px;}
+ .contact h2{font-size:40px;}
+}
+
+/* Small mobile */
+@media (max-width:480px){
+ nav{gap:12px;font-size:14px;}
+ .home-left h1{font-size:38px;}
+ .home-left h3{font-size:18px;}
+ .service-card{width:270px;}
+ .tools h2{font-size:34px;}
+ .community h2{font-size:36px;}
+ .brands h1{font-size:36px;}
+ .contact h2{font-size:36px;}
+}
 </style>
 </head>
 <body>
@@ -312,7 +283,7 @@ nav a{text-decoration:none;color:black;font-size:16px;}
  </div>
 
  <div class="home-right zoom-reveal">
-   <img src="myimage.JPG" width="550" />
+   <img src="myimage.JPG" />
  </div>
 </section>
 
@@ -324,63 +295,25 @@ nav a{text-decoration:none;color:black;font-size:16px;}
    <p>My name is Vanraj Luhariya. I'm currently pursuing BCA and I specialize in photo/video editing and social media content creation. I love exploring creativity, experimenting with new ideas, and building things that stand out.</p>
    <br><br><p>Let’s connect and create something awesome!</p>
    <br><br>
-    <div style= "display:flex; gap:30px; margin-top:20px;">
-
-  <div class="button-yellow">
-    <a href="https://www.linkedin.com/in/vanraj-luhariya-1351892ba/">Linkedin</a>
-  </div>
-
-  <div class="button-yellow">
-    <a href="https://github.com/1rajluhariya">Github</a>
-  </div>
-
-  <div class="button-yellow">
-    <a href="https://wa.me/919726803983">Contact</a>
-  </div>
-</div>
+ <div style="display:flex; gap:30px; margin-top:20px; flex-wrap:wrap; justify-content:center;">
+  <div class="button-yellow"><a href="https://www.linkedin.com/in/vanraj-luhariya-1351892ba/">Linkedin</a></div>
+  <div class="button-yellow"><a href="https://github.com/1rajluhariya">Github</a></div>
+  <div class="button-yellow"><a href="https://wa.me/919726803983">Contact</a></div>
+ </div>
 </section>
 
-<!-- TOOLS (SERVICES) -->
+<!-- SERVICES -->
 <section class="tools" id="tools">
  <h2 class="reveal">SERVICES I PROVIDE</h2>
 
 <div class="services-grid">
-
-  <div class="service-card reveal">
-    <h3>Photo Editing</h3>
-    <p>Professional retouching, color grading & aesthetic edits.</p>
-  </div>
-
-  <div class="service-card reveal">
-    <h3>Video Editing</h3>
-    <p>Cinematic reels, transitions & smooth cuts.</p>
-  </div>
-
-  <div class="service-card reveal">
-    <h3>Thumbnail Designing</h3>
-    <p>Eye-catching thumbnails for YouTube & social media.</p>
-  </div>
-
-  <div class="service-card reveal">
-    <h3>Logo Designing</h3>
-    <p>Modern, clean, unique logo designs for your brand.</p>
-  </div>
-
-  <div class="service-card reveal">
-    <h3>Social Media Content Creation</h3>
-    <p>Creative posts, reels, banners & more.</p>
-  </div>
-
-  <div class="service-card reveal">
-    <h3>Reels Editing</h3>
-    <p>Trend-based reels with smooth transitions.</p>
-  </div>
-
-  <div class="service-card reveal">
-    <h3>Poster & Banner Designing</h3>
-    <p>High-quality promotional posters and banners.</p>
-  </div>
-
+  <div class="service-card reveal"><h3>Photo Editing</h3><p>Professional retouching, color grading & aesthetic edits.</p></div>
+  <div class="service-card reveal"><h3>Video Editing</h3><p>Cinematic reels, transitions & smooth cuts.</p></div>
+  <div class="service-card reveal"><h3>Thumbnail Designing</h3><p>Eye-catching thumbnails for YouTube & social media.</p></div>
+  <div class="service-card reveal"><h3>Logo Designing</h3><p>Modern & unique logo designs for your brand.</p></div>
+  <div class="service-card reveal"><h3>Social Media Content Creation</h3><p>Creative posts, reels, banners & more.</p></div>
+  <div class="service-card reveal"><h3>Reels Editing</h3><p>Trend-based reels with smooth transitions.</p></div>
+  <div class="service-card reveal"><h3>Poster & Banner Designing</h3><p>High-quality promotional posters and banners.</p></div>
 </div>
 
 <div class="tools-grid">
@@ -396,41 +329,20 @@ nav a{text-decoration:none;color:black;font-size:16px;}
 <section class="community" id="community">
  <div class="reveal">
    <h2>meet my<br>COMM<span>UNITY</span></h2>
-   <p>I run an Instagram page called <b>Outfit Guruji </b>– OG Collection, dedicated to men’s fashion and styling. Today, our page has grown into a strong community of <b>11.1K</b>followers who share a passion for outfits, trends, and creativity. We explore new styles and inspire men daily.</p>
-   <div class="button-yellow">
-     <a href="https://instagram.com/outfitguruji">Instagram Page</a>
-   </div>
+   <p>I run an Instagram page called <b>Outfit Guruji </b> – OG Collection, dedicated to men’s fashion & styling. Our page has grown into a strong community of <b>11.1K</b> followers who share a passion for outfits, trends & creativity.</p>
+   <div class="button-yellow"><a href="https://instagram.com/outfitguruji">Instagram Page</a></div>
  </div>
  <img class="zoom-reveal" src="insta.png" width="500">
 </section>
 
 <!-- SHOP -->
 <section class="shop" id="shop">
- <h1 class="reveal" style="font-size:45px;">My Shop</h1>
+ <h1 class="reveal">My Shop</h1>
 
  <div class="shop-grid">
-
-   <div class="shop-card zoom-reveal">
-     <img src="product2.png">
-     <h3>Sound Effects Pack</h3>
-     <p>₹199</p>
-     <div class="shop-btn"><a href="page.html">Buy Now</a></div>
-   </div>
-
-   <div class="shop-card zoom-reveal">
-     <img src="product1.png">
-     <h3>Video Editing Pack</h3>
-     <p>₹199</p>
-     <div class="shop-btn"><a href="page.html">Buy Now</a></div>
-   </div>
-
-   <div class="shop-card zoom-reveal">
-     <img src="product3.png">
-     <h3>Photo Editing Pack</h3>
-     <p>₹199</p>
-     <div class="shop-btn"><a href="page.html">Buy Now</a></div>
-   </div>
-
+   <div class="shop-card zoom-reveal"><img src="product2.png"><h3>Sound Effects Pack</h3><p>₹199</p><div class="shop-btn"><a href="page.html">Buy Now</a></div></div>
+   <div class="shop-card zoom-reveal"><img src="product1.png"><h3>Video Editing Pack</h3><p>₹199</p><div class="shop-btn"><a href="page.html">Buy Now</a></div></div>
+   <div class="shop-card zoom-reveal"><img src="product3.png"><h3>Photo Editing Pack</h3><p>₹199</p><div class="shop-btn"><a href="page.html">Buy Now</a></div></div>
  </div>
 </section>
 
@@ -451,16 +363,12 @@ nav a{text-decoration:none;color:black;font-size:16px;}
 <section class="contact" id="contact">
  <h2 class="reveal">CONTACT ME</h2>
  <p class="reveal">Want to work with me? Let’s create something amazing together.</p>
-
- <a class="contact-btn reveal" href="https://wa.me/919726803983">
-   Message on WhatsApp
- </a>
+ <a class="contact-btn reveal" href="https://wa.me/919726803983">Message on WhatsApp</a>
 </section>
 
 <!-- SCROLL ANIMATION JS -->
 <script>
 const revealElements = document.querySelectorAll(".reveal, .zoom-reveal");
-
 function revealOnScroll(){
  revealElements.forEach(el=>{
    const rect = el.getBoundingClientRect().top;
@@ -468,12 +376,8 @@ function revealOnScroll(){
    if(rect < view){ el.classList.add("active"); }
  });
 }
-
 window.addEventListener("scroll", revealOnScroll);
 window.onload = revealOnScroll;
 </script>
-
 </body>
 </html>
-
-
